@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEMON</title>
+    <link rel="stylesheet" href="estilo.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="tittle" style="color: black; font-size: 20px;"> BATALLA POKEMON</h1>
+
+    <div class="pokemon-list" id="listarpokemon" style="width: 35rem">
+        <div class="pokemon">
+            <div id="pok-1">
+                <p class="card-text" style="text-transform: uppercase"></p>
+                <img src="" class="card-img-top">
+
+            </div>
+            <div id="pok-2">
+                <p class="card-text" style="text-transform: uppercase"></p>
+                <img src="" class="card-img-top">
+
+            </div>
+        </div>
+
+        <div class="vs" style="color: white; font-size: 50px; font-weight: bold;">VS</div>
+        <div class="pokemon">
+            <div id="pok-3">
+                <p class="card-text" style="text-transform: uppercase"></p>
+                <img src="" class="card-img-top">
+
+            </div>
+            <div id="pok-4">
+                <p class="card-text" style="text-transform: uppercase"></p>
+                <img src="" class="card-img-top">
+
+            </div>
+        </div>
+        <br><br>
+
+
+    </div>
+    <div style="text-align: center;">
+        <button style="margin-left: 2%;background-color:darkseagreen;" type="button" style="color: cadetblue;" class="btn btn-light" onclick="consultarPokemones()">NUEVA
+            BATALLA</button>
+    </div >
+
+    <script>
+
+        let lista = document.getElementById("listarpokemon");
+        function consultarPokemon(id, number) {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+                .then(res => {
+                    res.json()
+                        .then(pokemon => {
+                            console.log(pokemon)
+                            mostrarPokemon(pokemon, number)
+                        })
+
+
+                })
+        }
+        function consultarPokemones() {
+            for (var i = 1; i < 5; i++) {
+                let prokemonaleatorio = Math.round(Math.random() * 150);
+                consultarPokemon(prokemonaleatorio, i);
+            }
+        }
+        function mostrarPokemon(pokemon, id) {
+            let item = lista.querySelector(`#pok-${id}`);
+            let img = item.getElementsByTagName("img")[0].setAttribute("src", pokemon.sprites.front_default);
+            let nombre = item.getElementsByTagName("p")[0].innerHTML = pokemon.name;
+
+        }
+        consultarPokemones();
+    </script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
