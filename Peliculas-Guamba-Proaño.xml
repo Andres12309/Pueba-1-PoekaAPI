@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Cartelera>	
+	<pelicula>
+		<codigo>AGP132020</codigo>
+		<titulo>Avatar</titulo>
+		<anio>2009</anio>
+		<duracion>
+			<horas>2</horas>
+			<minutos>42</minutos>
+			<segundos>0</segundos>
+		</duracion>
+		<nacionalidad>Estados-Unidos</nacionalidad>
+		<genero>Cinecia-ficcion</genero>
+		<clasificacion>no apto para menores de 7 anios</clasificacion>
+		<director>
+			<nombre>James</nombre>
+			<apellido>Cameron</apellido>
+			<fecha-de-nacimiento>
+				<anio>1954</anio>
+				<mes>agosto</mes>
+				<dia>16</dia>
+			</fecha-de-nacimiento>
+		</director>
+		<reaparto>
+			<actores-principales>
+				<nombres-originales>Sam Worthington - Zoe Saldana - Sigourney Weaver</nombres-originales>
+				<nombre-en-la-pelicula>Jake Sully - Neytiri Omaticaya - Grace Augustine</nombre-en-la-pelicula>
+			</actores-principales>
+			<actores-secundarios>
+				<nombres-originales>Stephen Lang - Michelle Rodriguez</nombres-originales>
+				<nombre-en-la-pelicula>Coronel Miles Quaritch - Trudy Chacon</nombre-en-la-pelicula>
+			</actores-secundarios>
+			<dobles>
+				<nombres-originales>vacio</nombres-originales>
+				<nombre-en-la-pelicula>vacio</nombre-en-la-pelicula>
+			</dobles>
+		</reaparto>
+		<sinopsis></sinopsis>
+	</pelicula>
+</Cartelera>
